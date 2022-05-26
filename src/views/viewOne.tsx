@@ -1,4 +1,4 @@
-// import { useState } from "react";
+
 import React, { useEffect, useState } from "react";
 import { fetchPosts } from "../actions/postAction";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +8,7 @@ type Props = {}
 const ViewOne: React.FC<Props> = () => {
     const data = useSelector((state: any) => state.posts);
     const [value, setValue] = useState(1800)
+    const dispatch = useDispatch();
 
     // handleOnInpput
     const handleOnInpput = (e: any) => {
@@ -15,9 +16,8 @@ const ViewOne: React.FC<Props> = () => {
         window.scrollTo({left: 0, top: out, behavior: 'smooth'});
         setValue(e.target.value)
     }
-    const dispatch = useDispatch();
-    // get input by id
-    const slider = document.getElementById("slider");
+
+    // ------------without redux------------
     // const fetchPosts = async () => {
     //     try {
     //         const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -31,15 +31,11 @@ const ViewOne: React.FC<Props> = () => {
 
     // }
 
+
     useEffect(() => {
         fetchPosts(dispatch);
        
     }, []);
-
-    const scroll = () => {
-      
-    }
-    // }, [])
 
     return (
         <div className="body">
