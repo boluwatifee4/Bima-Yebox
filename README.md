@@ -1,4 +1,4 @@
-# Interview Test By Ola Boluwatife [link to project](bimaYeebox.netlify.app)
+# Interview Test By Ola Boluwatife [link to project](https://bimayeebox.netlify.app/)
  
 ## Introduction
 This is a test for the interview. Where the test is to call a rest api and get the response using redux as well as archiving 100% responsiveness.
